@@ -7,19 +7,19 @@ const listaCaes = [
   {
     status: 'Disponíveis',
     badge: 'badge-success',
-    imagem: '../imagens/cachorro1.jpg',
+    imagem: 'imagens/cachorro1.jpg',
     descricao: 'Cachorro resgatado'
   },
   {
     status: 'Vacinados',
     badge: 'badge-info',
-    imagem: '../imagens/cachorro2.jpg',
+    imagem: 'imagens/cachorro2.jpg',
     descricao: 'Cachorro disponível para adoção'
   },
   {
     status: 'Castrados',
     badge: 'badge-success',
-    imagem: '../imagens/cachorro3.jpg',
+    imagem: 'imagens/cachorro3.jpg',
     descricao: 'Cachorro brincando'
   }
 ];
@@ -69,7 +69,7 @@ const rotas = {
     <section class="cards-container">
       <article class="card card-projeto">
         <span class="badge badge-success">Resgate</span>
-        <img src="../imagens/caesabn.jpg" alt="Resgate de cães abandonados">
+        <img src="imagens/caesabn.jpg" alt="Resgate de cães abandonados">
         <div class="card-content">
           <h3>Resgate de Cães</h3>
           <p>Nosso projeto de resgate visa salvar cães em situação de abandono e vulnerabilidade.</p>
@@ -78,7 +78,7 @@ const rotas = {
 
       <article class="card card-projeto">
         <span class="badge badge-info">Adoção</span>
-        <img src="../imagens/ciaadocao.jpg" alt="Campanha de Adoção">
+        <img src="imagens/ciaadocao.jpg" alt="Campanha de Adoção">
         <div class="card-content">
           <h3>Campanha de Adoção</h3>
           <p>Promovemos feiras e campanhas para conectar animais a famílias responsáveis e amorosas.</p>
@@ -87,7 +87,7 @@ const rotas = {
 
       <article class="card card-projeto">
         <span class="badge badge-success">Conscientização</span>
-        <img src="../imagens/novostutores.jpg" alt="Seleção de Novos Tutores">
+        <img src="imagens/novostutores.jpg" alt="Seleção de Novos Tutores">
         <div class="card-content">
           <h3>Seleção de Novos Tutores</h3>
           <p>Entrevistas e orientações para garantir um ambiente seguro e acolhedor para cada cão.</p>
