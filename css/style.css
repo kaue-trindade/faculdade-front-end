@@ -1,1 +1,501 @@
+:root {
+  /* Paleta primária */
+  --color-primary: #43a047;
+  --color-primary-dark: #2e7d32;
+  --color-primary-darker: #1b5e20;
 
+  /* Paleta secundária */
+  --color-secondary: #a5d6a7;
+  --color-secondary-light: #e8f5e9;
+
+  /* Tons neutros */
+  --color-neutral-light: #f5f5f5;
+  --color-neutral-dark: #212121;
+  --color-white: #ffffff;
+
+  /* Tipografia */
+  --font-family-base: 'Roboto', sans-serif;
+
+  --font-size-xl: 2rem;
+  --font-size-lg: 1.5rem;
+  --font-size-md: 1.125rem;
+  --font-size-sm: 1rem;
+  --font-size-xs: 0.875rem;
+
+  /* Espaçamentos modulares (escala de 8px) */
+  --space-xxs: 4px;
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+  --space-xl: 48px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--space-md);
+  font-family: var(--font-family-base);
+  background-color: var(--color-neutral-light);
+  color: var(--color-neutral-dark);
+}
+
+@media (max-width: 992px) {
+  body {
+    grid-template-columns: repeat(8, 1fr);
+    gap: var(--space-sm);
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    grid-template-columns: repeat(6, 1fr);
+    gap: var(--space-xs);
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-xs);
+  }
+}
+
+@media (max-width: 360px) {
+  body {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xxs);
+  }
+}
+
+/* CABEÇALHO */
+.header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: var(--space-md);
+}
+
+/* NAVEGAÇÃO DESKTOP */
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  position: absolute;
+  top: 70px;
+  left: var(--space-md);
+  padding: var(--space-md);
+  border-radius: var(--space-xxs);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+
+  /* Escondido até clicar */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+
+/* Regra que abre o menu ao clicar no hambúrguer */
+#menu-toggle:checked + .hamburger + .nav-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.nav-menu a {
+  color: var(--color-primary-darker);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a:focus {
+  color: var(--color-primary);
+}
+
+/* BOTÃO HAMBÚRGUER (Oculto no Desktop) */
+.hamburger {
+  position: absolute;
+  left: var(--space-md);
+  font-size: 2rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  display: none;
+  color: var(--color-primary-darker);
+  z-index: 2;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.hamburger {
+  position: absolute;
+  left: var(--space-md);
+  font-size: 2rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  display: block; 
+  color: var(--color-primary-darker);
+  z-index: 2;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.hamburger:hover {
+  color: var(--color-primary);
+  transform: scale(1.1);
+}
+
+#menu-toggle {
+  display: none;
+}
+
+/* CONTEÚDO E RODAPÉ */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-lg);
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-md) var(--space-lg);
+  margin-top: var(--space-xl);
+  background-color: var(--color-white);
+  border-top: 1px solid #e0e0e0;
+  font-size: var(--font-size-xs);
+  color: var(--color-neutral-dark);
+}
+
+.footer-container a {
+  color: var(--color-primary-dark);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-container a:hover {
+  text-decoration: underline;
+}
+
+/* Ajuste para quando abrir no celular */
+@media (max-width: 576px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-xs);
+    padding: var(--space-md);
+  }
+}
+
+/* BOTÕES E ESTADOS INTERATIVOS GERAIS */
+.btn {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: var(--space-xs) var(--space-sm);
+  border: none;
+  border-radius: var(--space-xxs);
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.1s ease;
+}
+
+.btn:hover {
+  background-color: var(--color-primary-dark);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+/* FORMULÁRIOS COM FEEDBACK */
+input, textarea {
+  border: 1px solid #ccc;
+  padding: var(--space-xs);
+  border-radius: var(--space-xxs);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 5px rgba(67, 160, 71, 0.4);
+  outline: none;
+}
+
+input:valid {
+  border-color: var(--color-primary-dark);
+}
+
+input:invalid:not(:placeholder-shown) {
+  border-color: #d32f2f;
+  box-shadow: 0 0 5px rgba(211, 47, 47, 0.3);
+}
+
+/* MEDIA QUERY PARA MOBILE (ATÉ 768px) */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    padding: var(--space-md);
+    border-radius: var(--space-xxs);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  }
+
+  #menu-toggle:checked + .hamburger + .nav-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+/* =========================================
+   CORREÇÃO DO LAYOUT DOS CARDS E IMAGENS
+========================================= */
+
+/* Limita e centraliza a área do conteúdo */
+main {
+  padding: 0 var(--space-md);
+}
+
+.sobre-section {
+  margin-bottom: var(--space-lg);
+}
+
+.sobre-section p {
+  line-height: 1.6;
+  margin-top: var(--space-xs);
+}
+
+/* Caixa de Alerta destacada */
+.alert-box {
+  background-color: #e8f5e9;
+  border-left: 6px solid var(--color-primary);
+  color: var(--color-primary-darker);
+  padding: var(--space-sm) var(--space-md);
+  margin-bottom: var(--space-md);
+  border-radius: var(--space-xxs);
+  font-size: var(--font-size-sm);
+}
+
+/* Alinhamento dos Cards */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin-top: var(--space-sm);
+  justify-content: flex-start;
+}
+
+/* O cartão que segura a imagem e a etiqueta */
+.card {
+  position: relative;
+  width: 280px;
+  height: 260px;
+  border-radius: var(--space-xs);
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  background-color: var(--color-white);
+}
+
+/* Faz a imagem preencher o card proporcionalmente sem distorcer */
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ETIQUETAS (BADGES) */
+.badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: var(--font-size-xs);
+  font-weight: bold;
+  color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+.badge-success {
+  background-color: var(--color-primary);
+}
+
+.badge-info {
+  background-color: #1976d2;
+}
+
+/* TOAST (NOTIFICAÇÃO FLUTUANTE) */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: #212121;
+  color: #ffffff;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--space-xxs);
+  border-left: 5px solid var(--color-primary);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  font-size: var(--font-size-sm);
+  z-index: 1000;
+}
+
+/* =========================================
+   ESTILOS DE PROJETOS E FORMULÁRIO DE CADASTRO
+========================================= */
+
+/* Cards de Projetos com conteúdo expandido */
+.card-projeto {
+  width: 320px;
+  height: auto;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-projeto img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-projeto .card-content {
+  padding: var(--space-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  flex-grow: 1;
+}
+
+.card-projeto h3 {
+  font-size: var(--font-size-md);
+  color: var(--color-primary-darker);
+}
+
+.card-projeto p {
+  font-size: var(--font-size-xs);
+  line-height: 1.5;
+  color: var(--color-neutral-dark);
+}
+
+/* Formulário de Cadastro */
+.form-cadastro {
+  background-color: var(--color-white);
+  padding: var(--space-md);
+  border-radius: var(--space-xs);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 720px;
+  margin-bottom: var(--space-lg);
+}
+
+.form-fieldset {
+  border: 1px solid #e0e0e0;
+  border-radius: var(--space-xxs);
+  padding: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.form-fieldset legend {
+  font-weight: bold;
+  color: var(--color-primary-darker);
+  padding: 0 var(--space-xs);
+  font-size: var(--font-size-sm);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xxs);
+  margin-bottom: var(--space-sm);
+}
+
+.form-group label {
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  color: var(--color-neutral-dark);
+}
+
+.form-group-row {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.form-group-row .form-group {
+  flex: 1;
+  min-width: 200px;
+}
+
+select {
+  border: 1px solid #ccc;
+  padding: var(--space-xs);
+  border-radius: var(--space-xxs);
+  background-color: #fff;
+  font-family: inherit;
+  font-size: inherit;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+select:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 5px rgba(67, 160, 71, 0.4);
+  outline: none;
+}
+
+.radio-group,
+.checkbox-group {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  margin-top: var(--space-xxs);
+}
+
+.radio-group label,
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xxs);
+  cursor: pointer;
+  font-weight: normal;
+}
+
+/* Estado de ERRO no campo */
+.campo-erro {
+  border-color: #d32f2f !important;
+  box-shadow: 0 0 5px rgba(211, 47, 47, 0.4) !important;
+}
+/* Mensagem de erro que aparece abaixo do campo */
+.mensagem-erro {
+  color: #d32f2f;
+  font-size: 0.8rem;
+  margin-top: 4px;
+}
+/* Estado de SUCESSO no campo */
+.campo-sucesso {
+  border-color: var(--color-primary-dark) !important;
+  box-shadow: 0 0 5px rgba(46, 125, 50, 0.4) !important;
+}
