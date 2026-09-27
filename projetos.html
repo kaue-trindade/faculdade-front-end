@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Au Au - Nossos Projetos</title>
+    <!-- Google Fonts: Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="header-container" style="grid-column: 1 / -1;">
+        <h1> Au Au - Abrigo para Cães</h1>
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="hamburger">☰</label>
+        <nav class="nav-menu">
+            <a href="index.html">Início</a>
+            <a href="projetos.html">Projetos</a>
+            <a href="cadastro.html">Cadastro</a>
+        </nav>
+    </header>
+
+    <main id="conteudo-principal" style="grid-column: 1 / -1;">
+        <!-- Alerta com destaque -->
+        <div class="alert-box">
+            <strong>Participe:</strong> Nossos projetos acontecem graças ao apoio e doação de pessoas como você!
+        </div>
+
+        <!-- Seção explicativa -->
+        <section class="sobre-section">
+            <h2>Nossos Projetos</h2>
+            <p>Conheça as principais iniciativas e ações que desenvolvemos diariamente para resgatar, recuperar e transformar a vida dos cães abandonados.</p>
+        </section>
+
+        <!-- Galeria de Projetos em Cards -->
+        <section class="cards-container">
+            <article class="card card-projeto">
+                <span class="badge badge-success">Resgate</span>
+                <img src="../imagens/caesabn.jpg" alt="Resgate de cães abandonados">
+                <div class="card-content">
+                    <h3>Resgate de Cães</h3>
+                    <p>Nosso projeto de resgate visa salvar cães em situação de abandono e vulnerabilidade. Trabalhamos com equipes dedicadas e veterinários parceiros para garantir assistência e abrigo digno.</p>
+                </div>
+            </article>
+
+            <article class="card card-projeto">
+                <span class="badge badge-info">Adoção</span>
+                <img src="../imagens/ciaadocao.jpg" alt="Campanha de Adoção">
+                <div class="card-content">
+                    <h3>Campanha de Adoção</h3>
+                    <p>Promovemos feiras e campanhas de adoção responsável, conectando cães resgatados e recuperados com famílias amorosas, promovendo novas histórias de carinho e proteção.</p>
+                </div>
+            </article>
+
+            <article class="card card-projeto">
+                <span class="badge badge-success">Conscientização</span>
+                <img src="../imagens/novostutores.jpg" alt="Seleção de Novos Tutores">
+                <div class="card-content">
+                    <h3>Seleção de Novos Tutores</h3>
+                    <p>Processo cuidadoso de triagem, entrevistas e visitas com orientação responsável para garantir que cada adoção seja um sucesso para o cão e para toda a família.</p>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer class="footer-container" style="grid-column: 1 / -1;">
+        <small>© 2026 ONG Au Au — Todos os direitos reservados.</small>
+        <small>Contato: <a href="mailto:contato@ongauau.org">contato@ongauau.org</a></small>
+    </footer>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>
